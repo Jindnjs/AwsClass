@@ -41,7 +41,7 @@
 
 <!-- 회원가입 모달 -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
       	<div class="position-absolute top-30 start-50 translate-middle-x">
@@ -50,7 +50,48 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        
+          <div class="mb-3 row">
+		    <label for="staticEmail" class="col-sm-2 col-form-label">아이디</label>
+		    <div class="col-sm-10">
+		      <input type="email" class="form-control" id="staticEmail" placeholder="email@example.com">
+		    </div>
+		  </div>
+		  
+		  <div class="mb-3 row">
+		    <label for="inputPassword" class="col-sm-2 col-form-label">비밀번호</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword">
+		    </div>
+		  </div>
+          
+          <div class="mb-3 row">
+		    <label for="inputPassword" class="col-sm-2 col-form-label">성별</label>
+		    <div class="col-sm-10">
+		      	<input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
+				<label class="btn" for="option5">남자</label>
+				
+				<input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
+				<label class="btn" for="option6">여자</label>
+		    </div>
+		  </div>
+		  
+          
+          <div class="mb-3 row">
+		   <label for="exampleDataList" class="col-sm-2 col-form-label">지역</label>
+		    <div class="col-sm-10">
+		      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="선택...">
+			<datalist id="datalistOptions">
+			  <option value="서울시">
+			  <option value="수원시">
+			  <option value="인천시">
+			  <option value="기타">
+			</datalist> 
+		    </div>
+		  </div>
+          
+  
+          
       </div>
       <div class="modal-footer">
 	      <div class="d-grid gap-2 col-6 mx-auto">
