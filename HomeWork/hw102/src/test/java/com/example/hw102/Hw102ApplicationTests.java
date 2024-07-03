@@ -1,10 +1,10 @@
-package com.example.hw02;
+package com.example.hw102;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Hw02ApplicationTests {
+class Hw102ApplicationTests {
 
 	@Test
 	void contextLoads() {
