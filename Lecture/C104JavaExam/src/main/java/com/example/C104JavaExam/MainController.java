@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+
 @Controller
 public class MainController {
 	
@@ -41,7 +43,7 @@ public class MainController {
 	
 	@Autowired
 	private MainService ms;
-	
+//	
 	@PostMapping("/signup") //클라이언트 > 서버 전달
 	public String signup(@RequestParam ("id") String id,
 							 @RequestParam ("pass") String pass

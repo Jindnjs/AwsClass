@@ -4,9 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+
+//Lombok 의존성 주입시 사용 가능
+//@RequiredArgsConstructor
+
 public class MainService {
 	
-	//어노테이션에서 선언
+//	private final MainRepository mr;
+//	//어노테이션에서 선언
 	@Autowired
 	private MainRepository mr;
 	
