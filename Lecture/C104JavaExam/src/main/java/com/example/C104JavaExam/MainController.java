@@ -43,8 +43,15 @@ public class MainController {
 							 @RequestParam ("pass") String pass
 			) {
 		
-		System.out.println(id);
-		System.out.println(pass);
+		System.out.println("컨트롤러로 넘오온 id = "+id);
+		System.out.println("컨트롤러로 넘어온 ps = "+pass);
+		
+		//서비스 객체 생성
+		MainService mainService = new MainService();
+		
+		//서비스의 메소드실행
+		mainService.serviceCreate(id,pass);
+		
 		return "redirect:/";
 	}
 	
