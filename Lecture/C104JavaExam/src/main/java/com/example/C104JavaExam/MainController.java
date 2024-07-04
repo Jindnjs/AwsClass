@@ -1,5 +1,6 @@
 package com.example.C104JavaExam;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +39,9 @@ public class MainController {
 		return "signup";
 	}
 	
+	@Autowired
+	private MainService ms;
+	
 	@PostMapping("/signup") //클라이언트 > 서버 전달
 	public String signup(@RequestParam ("id") String id,
 							 @RequestParam ("pass") String pass
@@ -47,10 +51,11 @@ public class MainController {
 		System.out.println("컨트롤러로 넘어온 ps = "+pass);
 		
 		//서비스 객체 생성
-		MainService mainService = new MainService();
+		//Autowired 어노테이션 사용시 사용하지 않음(메소드 외부에서 선언)
+		//MainService mainService = new MainService();
 		
 		//서비스의 메소드실행
-		mainService.serviceCreate(id,pass);
+		ms.serviceCreate(id,pass);
 		
 		return "redirect:/";
 	}
