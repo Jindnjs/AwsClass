@@ -19,11 +19,11 @@ public class MainController {
 	
 	@GetMapping("/index")
 	public String index2() {
-		return "index";
+		return "redirect:/";
 	}
 	@GetMapping("/index.html")
 	public String index3() {
-		return "index"; 
+		return "redirect:/"; 
 	}
 	
 	@GetMapping("/test")
@@ -62,24 +62,5 @@ public class MainController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/board")
-	public String board() {
-		return "board";
-	}
 	
-	@PostMapping("/board")
-	public String boardData(@RequestParam ("title") String title,
-							@RequestParam ("content") String content
-							) {
-		
-		System.out.println(title);
-		System.out.println(content);
-		return "redirect:/";
-		
-	}
-	
-	@GetMapping("/bbd")
-	public String bbd() {
-		return "bbd";
-	}
 }
