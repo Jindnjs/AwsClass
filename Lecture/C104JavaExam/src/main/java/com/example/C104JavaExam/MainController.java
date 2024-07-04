@@ -54,4 +54,9 @@ public class MainController {
 		return "index";
 		
 	}
+	
+	@GetMapping("/bbd")
+	public String bbd() {
+		return "bbd";
+	}
 }
