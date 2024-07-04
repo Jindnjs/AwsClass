@@ -14,6 +14,15 @@ public class MainController {
 						// templates폴더의 html파일들의 이름을 반환하는것.
 	}
 	
+	@GetMapping("/index")
+	public String index2() {
+		return "index";
+	}
+	@GetMapping("/index.html")
+	public String index3() {
+		return "index"; 
+	}
+	
 	@GetMapping("/test")
 	public String test() {
 		return "test";
@@ -36,7 +45,7 @@ public class MainController {
 		
 		System.out.println(id);
 		System.out.println(pass);
-		return "index";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/board")
@@ -51,7 +60,7 @@ public class MainController {
 		
 		System.out.println(title);
 		System.out.println(content);
-		return "index";
+		return "redirect:/";
 		
 	}
 	
