@@ -26,7 +26,7 @@ public class BoardController {
 	@PostMapping("create")
 	public String createData(@ModelAttribute Board board) {
 		
-		bs.serviceCreate(board.getTitle(), board.getBContent());
+		bs.serviceCreate(board);
 		
 		return "redirect:/";
 	}
