@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+                      <div class="d-flex align-items-center justify-content-end my-3">
+                        <div id="bulk-select-replace-element" class="d-none">
+                          <button class="btn btn-phoenix-success btn-sm" type="button"><svg class="svg-inline--fa fa-plus" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" style="transform-origin: 0.4375em 0.625em;"><g transform="translate(224 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" transform="translate(-224 -256)"></path></g></g></svg><!-- <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span> Font Awesome fontawesome.com --><span class="ms-1">New</span></button>
+                        </div>
+                        <div class="ms-3" id="bulk-select-actions">
+                          <div class="d-flex">
+                            <select class="form-select form-select-sm" aria-label="Bulk actions">
+                              <option selected="selected">Bulk actions</option>
+                              <option value="Delete">Delete</option>
+                              <option value="Archive">Archive</option>
+                            </select>
+                            <button class="btn btn-phoenix-danger btn-sm ms-2" type="button">Apply</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="tableExample" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;age&quot;],&quot;page&quot;:5,&quot;pagination&quot;:true}">
+                        <div class="table-responsive mx-n1 px-1">
+                          <table class="table table-sm border-top border-translucent fs-9 mb-0">
+                            <thead>
+                              <tr>
+                                <th class="white-space-nowrap fs-9 align-middle ps-0" style="max-width:20px; width:18px;">
+                                  <div class="form-check mb-0 fs-8">
+                                    <input class="form-check-input" id="bulk-select-example" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;bulk-select-body&quot;,&quot;actions&quot;:&quot;bulk-select-actions&quot;,&quot;replacedElement&quot;:&quot;bulk-select-replace-element&quot;}" indeterminate="indeterminate" checked="true">
+                                  </div>
+                                </th>
+                                <th class="sort align-middle ps-3" data-sort="name">Name</th>
+                                <th class="sort align-middle" data-sort="email">Email</th>
+                                <th class="sort align-middle" data-sort="age">Age</th>
+                                <th class="sort text-end align-middle pe-0" scope="col">ACTION</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list" id="bulk-select-body"><tr>
+                                <td class="fs-9 align-middle">
+                                  <div class="form-check mb-0 fs-8">
+                                    <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Antony&quot;,&quot;email&quot;:&quot;antony@example.com&quot;,&quot;age&quot;:39}">
+                                  </div>
+                                </td>
+                                <td class="align-middle ps-3 name">Antony</td>
+                                <td class="align-middle email">antony@example.com</td>
+                                <td class="align-middle age">39</td>
+                                <td class="align-middle white-space-nowrap text-end pe-0">
+                                  <div class="btn-reveal-trigger position-static">
+                                    <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><svg class="svg-inline--fa fa-ellipsis fs-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg><!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com --></button>
+                                    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr><tr>
+                                <td class="fs-9 align-middle">
+                                  <div class="form-check mb-0 fs-8">
+                                    <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Raymond&quot;,&quot;email&quot;:&quot;raymond@example.com&quot;,&quot;age&quot;:52}">
+                                  </div>
+                                </td>
+                                <td class="align-middle ps-3 name">Raymond</td>
+                                <td class="align-middle email">raymond@example.com</td>
+                                <td class="align-middle age">52</td>
+                                <td class="align-middle white-space-nowrap text-end pe-0">
+                                  <div class="btn-reveal-trigger position-static">
+                                    <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><svg class="svg-inline--fa fa-ellipsis fs-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg><!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com --></button>
+                                    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr><tr>
+                                <td class="fs-9 align-middle">
+                                  <div class="form-check mb-0 fs-8">
+                                    <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Marie&quot;,&quot;email&quot;:&quot;marie@example.com&quot;,&quot;age&quot;:30}">
+                                  </div>
+                                </td>
+                                <td class="align-middle ps-3 name">Marie</td>
+                                <td class="align-middle email">marie@example.com</td>
+                                <td class="align-middle age">30</td>
+                                <td class="align-middle white-space-nowrap text-end pe-0">
+                                  <div class="btn-reveal-trigger position-static">
+                                    <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><svg class="svg-inline--fa fa-ellipsis fs-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg><!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com --></button>
+                                    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr><tr>
+                                <td class="fs-9 align-middle">
+                                  <div class="form-check mb-0 fs-8">
+                                    <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Cohen&quot;,&quot;email&quot;:&quot;cohen@example.com&quot;,&quot;age&quot;:25}">
+                                  </div>
+                                </td>
+                                <td class="align-middle ps-3 name">Cohen</td>
+                                <td class="align-middle email">cohen@example.com</td>
+                                <td class="align-middle age">25</td>
+                                <td class="align-middle white-space-nowrap text-end pe-0">
+                                  <div class="btn-reveal-trigger position-static">
+                                    <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><svg class="svg-inline--fa fa-ellipsis fs-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg><!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com --></button>
+                                    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr><tr>
+                                <td class="fs-9 align-middle">
+                                  <div class="form-check mb-0 fs-8">
+                                    <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Rowen&quot;,&quot;email&quot;:&quot;rowen@example.com&quot;,&quot;age&quot;:39}">
+                                  </div>
+                                </td>
+                                <td class="align-middle ps-3 name">Rowen</td>
+                                <td class="align-middle email">rowen@example.com</td>
+                                <td class="align-middle age">39</td>
+                                <td class="align-middle white-space-nowrap text-end pe-0">
+                                  <div class="btn-reveal-trigger position-static">
+                                    <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><svg class="svg-inline--fa fa-ellipsis fs-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg><!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com --></button>
+                                    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr></tbody>
+                          </table>
+                        </div>
+                        <div class="d-flex flex-between-center pt-3 mb-3">
+                          <div class="pagination d-none"><li><button class="page" type="button" data-i="1" data-page="5">1</button></li><li><button class="page" type="button" data-i="2" data-page="5">2</button></li><li class="active"><button class="page" type="button" data-i="3" data-page="5">3</button></li></div>
+                          <p class="mb-0 fs-9">
+                            <span class="d-none d-sm-inline-block" data-list-info="data-list-info">11 to 15 <span class="text-body-tertiary"> Items of </span>15</span>
+                            <span class="d-none d-sm-inline-block"> — </span>
+                            <a class="fw-semibold" href="#!" data-list-view="*">
+                              View all
+                              <svg class="svg-inline--fa fa-angle-right ms-1" data-fa-transform="down-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="transform-origin: 0.25em 0.5625em;"><g transform="translate(128 256)"><g transform="translate(0, 32)  scale(1, 1)  rotate(0 0 0)"><path fill="currentColor" d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" transform="translate(-128 -256)"></path></g></g></svg><!-- <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span> Font Awesome fontawesome.com -->
+                            </a><a class="fw-semibold d-none" href="#!" data-list-view="less">
+                              View Less
+                              <svg class="svg-inline--fa fa-angle-right ms-1" data-fa-transform="down-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="transform-origin: 0.25em 0.5625em;"><g transform="translate(128 256)"><g transform="translate(0, 32)  scale(1, 1)  rotate(0 0 0)"><path fill="currentColor" d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" transform="translate(-128 -256)"></path></g></g></svg><!-- <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span> Font Awesome fontawesome.com -->
+                            </a>
+                          </p>
+                          <div class="d-flex">
+
+                            <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev"><span>Previous</span></button>
+
+                            <button class="btn btn-sm btn-primary px-4 ms-2 disabled" type="button" data-list-pagination="next" disabled=""><span>Next</span></button>
+                          </div>
+                        </div>
+                        <p class="mb-2">Click the button to get selected rows</p>
+                        <button class="btn btn-warning" data-selected-rows="data-selected-rows">Get Selected Rows</button>
+                        <pre id="selectedRows">[
+  {
+    "name": "Homer",
+    "email": "homer@example.com",
+    "age": 35
+  },
+  {
+    "name": "Raymond",
+    "email": "raymond@example.com",
+    "age": 52
+  },
+  {
+    "name": "Marie",
+    "email": "marie@example.com",
+    "age": 30
+  }
+]</pre>
+                      </div>
+                    
+</body>
+</html>
