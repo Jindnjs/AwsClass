@@ -18,4 +18,9 @@ public class MainController {
 	public String index2() {
 		return "index";
 	}
+	@GetMapping("/menu")
+	public String menu() {
+		return "menu";
+	}
+	
 }

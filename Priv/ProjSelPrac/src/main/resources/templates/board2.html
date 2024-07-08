@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일시</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+    </thead>
+    <tbody>
+    	
+        <tr th:each="sp : ${singleposttextList}">
+        <td>111</td>
+        	<td th:text="${sp.subject}"></td>
+            <td th:text="${sp.createDate}"></td>
+            <td th:text="${sp.autor}"></td>
+            <td th:text="${sp.viewcount}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
