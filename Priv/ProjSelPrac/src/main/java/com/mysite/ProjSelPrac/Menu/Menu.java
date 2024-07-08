@@ -23,5 +23,6 @@ public class Menu {
     @Column(length = 200)
     private String categoty;
 
-    private Integer rate;
+    private Integer menurate;
+    private Integer caterate;
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>메뉴 / 카테고리</h1><br>
+<ul>
+    <li th:each="entry : ${groupedMenuCategories}">
+        <a th:text="${entry.value[0].menu}"></a>
+        <ul>
+            <li th:each="category : ${entry.value}">
+                <a th:text="${category.categoty}" class="dropdown-item" href="#"></a>
+            </li>
+        </ul>
+    </li>
+</ul>
+        
+
+<form action="/addMenu" method='post'>
+<input type='text' name='menu'>
+<input type='text' name='categoty'>
+<button> 추가하기</button><br>
+</form>
+<br>
+<form action="/delMenu" method='post'>
+<input type='text' name='menu'>
+<input type='text' name='categoty'>
+<button> 삭제하기</button><br>
+</form>
+
+
+</body>
+</html>

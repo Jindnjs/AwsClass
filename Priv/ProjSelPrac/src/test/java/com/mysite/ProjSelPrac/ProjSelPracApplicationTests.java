@@ -1,14 +1,11 @@
 package com.mysite.ProjSelPrac;
 
-import java.time.LocalDateTime;
-import java.util.Random;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.mysite.ProjSelPrac.Board.SinglePostText;
-import com.mysite.ProjSelPrac.Board.SinglePostTextRepository;
+import com.mysite.ProjSelPrac.Menu.Menu;
+import com.mysite.ProjSelPrac.Menu.MenuRepository;
 
 
 
@@ -16,7 +13,7 @@ import com.mysite.ProjSelPrac.Board.SinglePostTextRepository;
 class ProjSelPracApplicationTests {
 	
 	@Autowired
-	private SinglePostTextRepository repo;
+	private MenuRepository repo;
 	
 	@Test
 	void contextLoads() {
@@ -72,20 +69,25 @@ class ProjSelPracApplicationTests {
 //		this.repo.save(spt4);
 //		this.repo.save(spt5);
 		
-		Random random = new Random();
-		for(int i=1;i<21;i++) {
-			SinglePostText spt5 = new SinglePostText();
-			int randomNumber = random.nextInt(9000) + 1000;
-			spt5.setSubject("일반게시판"+i+"번게시물입니다");
-			spt5.setCreateDate(LocalDateTime.now());
-			spt5.setAutor(i+"번작성자");
-			spt5.setViewcount(randomNumber);
-			spt5.setImportant(false);
-			spt5.setMenu("커뮤니티");
-			spt5.setCategory("일반게시판");
-			this.repo.save(spt5);
-		}
+//		Random random = new Random();
+//		for(int i=1;i<21;i++) {
+//			SinglePostText spt5 = new SinglePostText();
+//			int randomNumber = random.nextInt(9000) + 1000;
+//			spt5.setSubject("일반게시판"+i+"번게시물입니다");
+//			spt5.setCreateDate(LocalDateTime.now());
+//			spt5.setAutor(i+"번작성자");
+//			spt5.setViewcount(randomNumber);
+//			spt5.setImportant(false);
+//			spt5.setMenu("커뮤니티");
+//			spt5.setCategory("일반게시판");
+//			this.repo.save(spt5);
+//		}
 		
+//		Menu menu = new Menu();
+//		menu.setMenu("메뉴2");
+//		menu.setCategoty("3번카테고리");
+//		menu.setRate(2);
+//		repo.save(menu);
 		
 //		Optional<SinglePostText> oq = this.repo.findById(7);
 //        assertTrue(oq.isPresent());
