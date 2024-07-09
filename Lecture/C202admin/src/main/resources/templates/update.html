@@ -1,0 +1,19 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+    <h5 class="my-3 border-bottom pb-2">Board 수정</h5>
+    <form action="/board/update" method="post">
+    <!-- 이렇게 아이디를 넘겨줄수도있고 주소에 넘겨줄수도있 -->
+    <input type="hidden" name="id" th:value="${board.id}">
+    <input type="hidden" name="date" th:value="${board.createDate}">
+        <div class="mb-3">
+            <label for="subject" class="form-label">제목</label>
+            <input type="text" name="title" id="subject" class="form-control" th:value="${board.title}">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea name="content" id="content" class="form-control" rows="10" th:value="${board.content}"></textarea>
+        </div>
+        <input type="submit" value="저장하기" class="btn btn-primary my-2">
+    </form>
+</div>
+</html>

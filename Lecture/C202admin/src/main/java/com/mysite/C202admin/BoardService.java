@@ -2,6 +2,7 @@ package com.mysite.C202admin;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,16 @@ public class BoardService {
 	}
 	public List<Board> getAll() {
 		return this.br.findAll();
+	}
+	public Board getBoardById(Integer id) {
+		Optional<Board> ob = br.findById(id);
+
+		Board b = ob.get();
+
+		return b;
+		
+	}
+	public void update(Board b) {
+		br.save(b);
 	}
 }
