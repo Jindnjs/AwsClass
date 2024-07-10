@@ -1,0 +1,15 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+
+<a href="/" class = "btn btn-primary my-3">메인</a>
+
+
+     <div th:each="notice : ${noticeList}">
+	     <img th:src="|${downPath}/${notice.image1}|" height="100px">
+	     [[${notice.title}]]
+	     <br>
+     </div>
+
+
+</div>
+</html>

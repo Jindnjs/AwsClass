@@ -1,0 +1,16 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+<a href="/" class = "btn btn-primary my-3">메인</a>
+<form action ="/create" method="post" enctype="multipart/form-data">
+	
+	<label>제목 : </label>
+	<input class="mb-2" type="text" name="title"><br>
+	<label>내용 : </label>
+	<input class="mb-3"type="text" name="content"><br>
+	
+	<input class="btn btn-secondary" type="file" name="file">
+	<input class="btn btn-success ms-3" type="submit" value="등록">
+</form>
+
+</div>
+</html>
