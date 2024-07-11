@@ -3,6 +3,8 @@
 
 <a class="btn btn-secondary" href="create">c</a>
 <a class="btn btn-secondary" href="readlist">r</a>
-
+<a class="btn btn-secondary" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+<a class="btn btn-secondary" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+<a class="btn btn-secondary" th:href="@{/user/signup}">회원가입</a>
 </div>
 </html>
