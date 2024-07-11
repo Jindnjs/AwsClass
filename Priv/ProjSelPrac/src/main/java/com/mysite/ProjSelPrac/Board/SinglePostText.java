@@ -30,7 +30,8 @@ public class SinglePostText {
     
     private String autor;
     
-    private Integer viewcount;
+    @Column(length= 100000000)
+    private String content;
     
     private boolean important;
     
