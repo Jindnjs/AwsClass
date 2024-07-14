@@ -1,0 +1,30 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+
+
+  			<h4 th:text="${board.id}"></h4><br>
+            <h4 th:text="${board.title}"></h4><br>
+            <h6 th:text="${board.content}"></h6><br>
+            <h6 th:text="${#temporals.format(board.date, 'yyyy-MM-dd HH:mm')}"></h6><br>
+            
+            <div th:each="image : ${board.imagelist}">
+		        <img th:src="|${downpath}/${image}|" height="100px">
+		    </div>
+<br><br>
+<a th:href="@{|/delete/${board.id}|}">글 삭제</a>
+<a th:href="@{|/update/${board.id}|}">글 수정</a>
+
+<h5 th:text="|${#lists.size(board.commentlist)}개의 답변이 있습니다.|"></h5>
+<div>
+    <ul>
+        <li th:each="comment : ${board.commentlist}" th:text="${comment.content}"></li>
+    </ul>
+</div>
+
+<form th:action="@{|/comment/create/${board.id}|}" method="post">
+    <textarea name="content" id="content" rows="15"></textarea>
+    <input type="submit" value="답변등록">
+</form>
+
+</div>
+</html>
