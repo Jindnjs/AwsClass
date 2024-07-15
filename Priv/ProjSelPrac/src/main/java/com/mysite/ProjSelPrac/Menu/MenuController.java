@@ -21,7 +21,6 @@ public class MenuController {
 	@GetMapping("/menu")
 	public String showMenu(Model model) {
         List<Menu> menuCategories = ms.getAllMenuCategories();
-
         // 메뉴 이름을 기준으로 그룹화하여 Map으로 변환
         Map<Integer, List<Menu>> groupedMenuCategories = menuCategories.stream()
                 .collect(Collectors.groupingBy(Menu::getMenurate));

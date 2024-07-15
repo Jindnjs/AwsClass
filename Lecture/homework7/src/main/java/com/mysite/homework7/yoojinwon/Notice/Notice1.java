@@ -31,8 +31,6 @@ public class Notice1 {
     private String content; 
     
     
-    private Member author;
-    
     private String image1;
     private String image2;
     private String image3;
