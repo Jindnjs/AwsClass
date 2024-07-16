@@ -16,22 +16,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mysite.sbb.admin.AdminService;
+
 @RequestMapping("/question")
 @Controller
 public class QuestionController {
-
-	@Autowired
-	private QuestionRepository questionRepository;
 	
 	@Autowired
 	private QuestionGoogleService questionService;
+	
+	@Autowired
+	private AdminService adminService;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
     @GetMapping("/list")
     public String list(Model model) {
-        List<Question> questionList = this.questionRepository.findAll();
+        List<Question> questionList = questionService.readlist();
         model.addAttribute("questionList", questionList);
         return "question_list";
     }
@@ -48,7 +50,8 @@ public class QuestionController {
     }
     
     @GetMapping("/create")
-    public String questionCreate() {
+    public String questionCreate(Model model) {
+    	model.addAttribute("cates",adminService.getCate());
         return "question_form";
     }
     
@@ -66,6 +69,15 @@ public class QuestionController {
         questionService.delete(id);
 
         return "redirect:/question/list"; //  질문목록으로 이동
+    }
+    
+    @GetMapping("/searchkw")
+    public String searchkw(@RequestParam("keyword") String kw,
+    		Model model) {
+    	
+    	model.addAttribute("questionList", questionService.searchkw(kw));
+    	
+    	return "question_list";
     }
     
 }

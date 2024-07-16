@@ -34,6 +34,10 @@ public class Question {
     
     private String image1;
     
+    private String addr;
+    
+    private String cate;
+    
     @ManyToOne
     private SiteUser user;
     

@@ -11,4 +11,9 @@ public class MainController {
 		return"redirect:/question/list";
 	}
 	
+	@GetMapping("/map")
+	public String map() {
+		return "map";
+	}
+	
 }

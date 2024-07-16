@@ -2,6 +2,7 @@ package com.mysite.sbb.question;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,7 +20,7 @@ import com.mysite.sbb.user.UserService;
 
 @Primary
 @Service
-public class QuestionGoogleService {
+public class QuestionGoogleService implements QuestionService{
 	
 	@Autowired
 	private QuestionRepository questionRepository;
@@ -41,7 +42,12 @@ public class QuestionGoogleService {
             throw new DataNotFoundException("question not found");
         }
     }
-    
+
+	@Override
+	public List<Question> readlist() {
+		// TODO Auto-generated method stub
+		return questionRepository.findAll();
+	}
     
     public void create(Question question, MultipartFile file1) throws IOException {
     	//네이버 메일 발송
@@ -77,4 +83,13 @@ public class QuestionGoogleService {
     public void delete(Integer id) {
     	questionRepository.deleteById(id);
     }
+
+	@Override
+	public List<Question> searchkw(String kw) {
+		// TODO Auto-generated method stub
+		
+		return questionRepository.findBySubjectContaining(kw);
+	}
+
+
 }

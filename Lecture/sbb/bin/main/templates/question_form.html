@@ -10,6 +10,18 @@
             <input type="text" name="subject" id="subject" class="form-control">
         </div>
         <div class="mb-3">
+            <label for="subject" class="form-label">주소</label>
+            <input type="text" name="addr" id="addr" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="subject" class="form-label">카테고리</label>
+            <select name="cate" class="form-select" aria-label="Default select example">
+            
+            <option selected>선택하세요</option>
+            <option th:each="cate : ${cates}" th:value="${cate.name}">[[${cate.name}]]</option>	
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="content" class="form-label">내용</label>
             <textarea name="content" id="content" class="form-control" rows="10">
             </textarea>

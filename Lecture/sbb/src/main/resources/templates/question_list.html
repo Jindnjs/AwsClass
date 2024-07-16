@@ -1,7 +1,14 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container my-3">
 
-
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search" action="/question/searchkw">
+      <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 <div class="container my-3">
     <table class="table">
         <thead class="table-dark">
@@ -9,6 +16,7 @@
         <th>번호</th>
             <th>제목</th>
             <th>작성일시</th>
+            <th>카테고리</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +24,7 @@
             <td th:text="${loop.count}"></td>
             <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a></td>
             <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+           	<td th:text="${question.cate}"></td>
         </tr>
     </tbody>
 </table>
