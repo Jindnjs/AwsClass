@@ -9,9 +9,11 @@
 <span sec:authorize="isAuthenticated()">Welcome...<span th:text="${#authentication.name}"></span>
 <span th:text="${#authentication.authorities}"></span>
 <a href="/signout">Sign out</a>
-<a href="/naver">naver out</a>
-</span>
+
 <a href="/admin">관리자 전용</a>
+<a href="/product/create">제품등록 전용</a>
+</span>
+
 
 
 <form action="/signup" method="post">
@@ -21,5 +23,7 @@
 	<p>Mail : <input type="text" name="cemail">
 	<p><input type="submit" value="Sign up">
 </form>
+<a href="/naver">로그인소셜</a><br>
+<a href="/product/readlist">멤버쉽결제</a>
 </body>
 </html>

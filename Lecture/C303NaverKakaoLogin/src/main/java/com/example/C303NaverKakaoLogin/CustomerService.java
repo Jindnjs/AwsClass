@@ -63,7 +63,11 @@ public class CustomerService implements UserDetailsService {
 		
 		customerRepository.save(customer);
 	}
-	
+	public void updaterole() {
+		Customer customer = authen();
+		customer.setRole("ROLE_MANAGER");
+		customerRepository.save(customer);
+	}
 	public Customer authen() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -78,7 +82,7 @@ public class CustomerService implements UserDetailsService {
 		
 		
 		public int logincheck(String username) throws UsernameNotFoundException {
-			Optional<Customer> tcustomer = customerRepository.findByCemail(username);
+			Optional<Customer> tcustomer = customerRepository.findByusername(username);
 			
 			if (tcustomer.isEmpty()) {
 				return 1;//db에 없음, 회원 가입으로
