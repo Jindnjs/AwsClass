@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+게시판
+<a href="/board/create">글쓰기</a>
+<div th:each="board, loop: ${boards}">
+<h3>[[${loop.count}]]<a th:href="'/board/detail/' + ${board.id}" th:text="${board.subject}"></a></h3>
+<a th:text="${#temporals.format(board.date, 'yyyy-MM-dd HH:mm')}"></a>
+</div>
+</body>
+</html>

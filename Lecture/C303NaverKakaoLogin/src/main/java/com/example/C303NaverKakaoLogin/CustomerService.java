@@ -29,7 +29,7 @@ public class CustomerService implements UserDetailsService {
 	private CustomerRepository customerRepository;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Optional<Customer> tcustomer = customerRepository.findByusername(username);
+		Optional<Customer> tcustomer = customerRepository.findByUsername(username);
 		if (tcustomer.isEmpty()) {
 			throw new UsernameNotFoundException("You need to Sign up first...");
 		}
@@ -72,7 +72,7 @@ public class CustomerService implements UserDetailsService {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 		String username = userDetails.getUsername();
-		Optional<Customer> oc = customerRepository.findByusername(username);
+		Optional<Customer> oc = customerRepository.findByUsername(username);
 		return oc.get();
 	}
 	
@@ -82,7 +82,7 @@ public class CustomerService implements UserDetailsService {
 		
 		
 		public int logincheck(String username) throws UsernameNotFoundException {
-			Optional<Customer> tcustomer = customerRepository.findByusername(username);
+			Optional<Customer> tcustomer = customerRepository.findByUsername(username);
 			
 			if (tcustomer.isEmpty()) {
 				return 1;//db에 없음, 회원 가입으로
